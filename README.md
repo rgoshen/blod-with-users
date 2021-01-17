@@ -1,4 +1,4 @@
-# restful-blog
+# Multi-page Blog Website
 
 This is a multi-page Bootstrap website. Here are the features:
 
