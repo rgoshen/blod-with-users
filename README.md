@@ -14,7 +14,7 @@ This is a multi-page Bootstrap website. Here are the features:
 - SASS/SCSS
 - Python
 - Flask framework
-- MySQL database
+- MySQL & PostgreSQL database
 
 ## Installation
 
