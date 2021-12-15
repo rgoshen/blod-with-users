@@ -21,7 +21,8 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
+    <!-- Post column -->
+    <div class="col-sm-6">
       {% for post in all_posts %}
       <div class="post-preview">
         <a href="{{ url_for('show_post', post_id=post.id) }}">
@@ -41,15 +42,43 @@
       {% if current_user.id == 1: %}
       <div class="clearfix">
         <a
-          class="btn btn-primary float-right"
+          class="btn btn-primary float-right m-2"
           href="{{url_for('add_new_post')}}"
           >Create New Post</a
         >
       </div>
       {% endif %}
     </div>
-  </div>
-</div>
-<hr />
 
-{% include "footer.html" %}
+    <!-- Headlines column -->
+    <div class="col-sm-6 ps-3">
+      <h2 class="text-center">Headlines</h2>
+      <div class="list-group">
+        {% for article in articles %}
+        <a
+          href="{{article['url']}}"
+          target="_blank"
+          class="list-group-item list-group-item-action article-link"
+          aria-current="true"
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1 article-title">{{article['title']}}</h5>
+          </div>
+          <p class="mb-1 text-truncate article-desc">
+            {{article['description']}}
+          </p>
+          <small class="article-meta"
+            >{{article['author'] if article['author'] else
+            article['source']['name']}} </small
+          ><small class="float-right article-meta"
+            >{{article['publishedAt']}}</small
+          >
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  {% include "footer.html" %}
+</div>

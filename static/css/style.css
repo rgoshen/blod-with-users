@@ -1,3 +1,20 @@
-.delete{
-    text-decoration:none;
+.delete {
+  text-decoration: none;
+}
+
+.article-title:focus,
+.article-title:hover,
+.article-desc:focus,
+.article-desc:hover {
+  color: #0085a1;
+}
+
+.article-desc {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.article-meta {
+  font-size: 18px;
+  font-style: italic;
+  color: #868e96;
 }

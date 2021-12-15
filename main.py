@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from forms import LoginForm, RegisterForm, CreatePostForm, CommentForm
 from flask_gravatar import Gravatar
+from headlines_api import get_headlines
 import os
 
 app = Flask(__name__)
@@ -77,7 +78,8 @@ def admin_only(f):
 @app.route('/')
 def get_all_posts():
     posts = BlogPost.query.all()
-    return render_template("index.html", all_posts=posts, current_user=current_user)
+    articles = get_headlines()
+    return render_template("index.html", all_posts=posts, current_user=current_user, articles=articles)
 
 
 @app.route('/register', methods=["GET", "POST"])
