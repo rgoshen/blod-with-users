@@ -14,16 +14,16 @@ This is a multi-page Bootstrap website. Here are the features:
 - SASS/SCSS
 - Python
 - Flask framework
-- MySQL & PostgreSQL database
+- SQLite & PostgreSQL databases
 
 ## Installation
 
-1. `sh git clone https://github.com/rgoshen/blog-with-users `
-2. `sh cd blog_with_users `
-3. `sh python -m venv .venv `
-4. `sh pip install -r requirements.txt `
+1. `$ git clone https://github.com/rgoshen/blog-with-users `
+2. `$ cd blog_with_users `
+3. `$ python -m venv .venv `
+4. `$ pip install -r requirements.txt `
 5. get an api key from [newsapi ](https://newsapi.org/).
-6. `sh flask run `
+6. `$ flask run `
 
 ## Shoutouts
 
